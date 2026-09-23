@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: pay_invariants
+      POSTGRES_USER: pay
+      POSTGRES_PASSWORD: pay
+    ports:
+      - "5432:5432"
