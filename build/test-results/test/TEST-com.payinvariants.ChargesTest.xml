@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.payinvariants.ChargesTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-09-24T19:56:54.941Z" hostname="Ngueros-MacBook-Air.local" time="3.304">
+  <properties/>
+  <testcase name="same_key_same_body_charges_once()" classname="com.payinvariants.ChargesTest" time="0.283">
+    <failure message="java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;404&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.payinvariants.ChargesTest.same_key_same_body_charges_once(ChargesTest.java:33)
+</failure>
+  </testcase>
+  <system-out><![CDATA[15:56:55.009 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:55.080 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
+15:56:55.112 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:55.115 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-09-24T15:56:55.284-04:00  INFO 56574 --- [    Test worker] com.payinvariants.ChargesTest            : Starting ChargesTest using Java 23.0.1 with PID 56574 (started by tabo in /Users/tabo/pay-invariants)
+2026-09-24T15:56:55.286-04:00  INFO 56574 --- [    Test worker] com.payinvariants.ChargesTest            : No active profile set, falling back to 1 default profile: "default"
+2026-09-24T15:56:55.552-04:00  INFO 56574 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-24T15:56:55.560-04:00  INFO 56574 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2026-09-24T15:56:55.702-04:00  INFO 56574 --- [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2026-09-24T15:56:55.703-04:00  INFO 56574 --- [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-09-24T15:56:55.712-04:00  INFO 56574 --- [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 2.0.5
+2026-09-24T15:56:55.883-04:00  INFO 56574 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-09-24T15:56:56.050-04:00  INFO 56574 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2026-09-24T15:56:56.050-04:00  INFO 56574 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2026-09-24T15:56:56.062-04:00  INFO 56574 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 28.3.2
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 7837 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/tabo/Library/Containers/com.docker.docker/Data/docker-cli.sock
+2026-09-24T15:56:56.125-04:00  INFO 56574 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Creating container for image: testcontainers/ryuk:0.14.0
+2026-09-24T15:56:56.304-04:00  INFO 56574 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 is starting: 49c809a964d6e15312447b6bb850ba049dda66939932294c762ba9896294c600
+2026-09-24T15:56:56.476-04:00  INFO 56574 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 started in PT0.350861S
+2026-09-24T15:56:56.478-04:00  INFO 56574 --- [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-09-24T15:56:56.478-04:00  INFO 56574 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2026-09-24T15:56:56.478-04:00  INFO 56574 --- [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2026-09-24T15:56:56.479-04:00  INFO 56574 --- [    Test worker] tc.postgres:latest                       : Creating container for image: postgres:latest
+2026-09-24T15:56:56.504-04:00  INFO 56574 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest is starting: 53b14f8d5d8cf1c4c42f41a3ed70af400b24d363048cd17d27fbc32a320c6a0e
+2026-09-24T15:56:57.088-04:00  INFO 56574 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest started in PT0.609631S
+2026-09-24T15:56:57.089-04:00  INFO 56574 --- [    Test worker] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:60695/test?loggerLevel=OFF)
+2026-09-24T15:56:57.278-04:00  INFO 56574 --- [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:60695/test?loggerLevel=OFF (PostgreSQL 18.6)
+2026-09-24T15:56:57.298-04:00  INFO 56574 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-09-24T15:56:57.299-04:00  INFO 56574 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.004s)
+2026-09-24T15:56:57.299-04:00  WARN 56574 --- [    Test worker] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-09-24T15:56:57.309-04:00  INFO 56574 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-09-24T15:56:57.337-04:00  INFO 56574 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-09-24T15:56:57.339-04:00  INFO 56574 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-09-24T15:56:57.391-04:00  INFO 56574 --- [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-24T15:56:57.416-04:00  INFO 56574 --- [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-24T15:56:57.576-04:00  INFO 56574 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-24T15:56:57.589-04:00  INFO 56574 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-24T15:56:57.598-04:00  INFO 56574 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f5a680
+2026-09-24T15:56:57.599-04:00  INFO 56574 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-24T15:56:57.627-04:00  INFO 56574 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:60695/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-24T15:56:57.782-04:00  INFO 56574 --- [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-24T15:56:57.801-04:00  INFO 56574 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-24T15:56:57.830-04:00  WARN 56574 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-24T15:56:57.946-04:00  INFO 56574 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-24T15:56:57.946-04:00  INFO 56574 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-24T15:56:57.947-04:00  INFO 56574 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-09-24T15:56:57.958-04:00  INFO 56574 --- [    Test worker] com.payinvariants.ChargesTest            : Started ChargesTest in 2.812 seconds (process running for 3.434)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /charges
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Idempotency-Key:"abc", Content-Length:"13"]
+             Body = {"amount":50}
+    Session Attrs = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.servlet.resource.NoResourceFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = No static resource charges.
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/private/var/folders/04/sjgyr_q15qdgqtdp7lrfqv5r0000gn/T/cursor-sandbox-cache/eeb9510a970900b2e83284894847d742/gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.11/82212e5b3633e7a65fca8bec525762cfb6c9bae4/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
