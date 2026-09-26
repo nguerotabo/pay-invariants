@@ -22,6 +22,9 @@ class ChargesTest {
     @Autowired
     MockMvc mockMvc;
 
+    @Autowired
+    ChargesRepository chargesRepository;
+
     @Test
     void same_key_same_body_charges_once() throws Exception {
         String jsonBody = "{\"amount\":50}";
@@ -40,6 +43,7 @@ class ChargesTest {
         .content(jsonBody))
         .andReturn();
 
+        assertThat(chargesRepository.count()).isEqualTo(1);
         assertThat(second.getResponse().getStatus())
             .isEqualTo(first.getResponse().getStatus());
         assertThat(second.getResponse().getContentAsString())

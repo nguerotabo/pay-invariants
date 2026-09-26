@@ -44,7 +44,7 @@ public class IdempotencyKey {
         return http_status;
     }
 
-    public String getReponseBody(){
+    public String getResponseBody(){
         return response_body;
     }
 
@@ -60,7 +60,7 @@ public class IdempotencyKey {
         this.http_status = http_status;
     }
 
-    public void setReponseBody(String response_body){
+    public void setResponseBody(String response_body){
         this.response_body = response_body;
     }
 }

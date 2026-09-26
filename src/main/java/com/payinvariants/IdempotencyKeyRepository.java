@@ -6,5 +6,6 @@ import java.util.List;
 
 @Repository
 public interface IdempotencyKeyRepository extends JpaRepository<IdempotencyKey, String> {
+    boolean existsByBodyHash(String body_hash);
 } 
 
