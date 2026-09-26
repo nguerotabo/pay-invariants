@@ -44,7 +44,7 @@
 <tr>
 <td>
 <div class="infoBox">
-<div class="counter">1</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -62,7 +62,7 @@
 </td>
 <td>
 <div class="infoBox duration">
-<div class="counter">3.662s</div>
+<div class="counter">3.428s</div>
 <p>duration</p>
 </div>
 </td>
@@ -93,6 +93,15 @@
 </thead>
 <tbody>
 <tr>
+<td class="success">same_key_different_body_charges_once()</td>
+<td class="path" hidden="">same_key_different_body_charges_once()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="11">0.011s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+<tr>
 <td class="success">
 <a href="same_key_same_body_charges_once().html">same_key_same_body_charges_once()</a>
 </td>
@@ -100,7 +109,7 @@
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td data-sort-value="491">0.491s</td>
+<td data-sort-value="454">0.454s</td>
 <td class="success" data-sort-value="100">100%</td>
 </tr>
 </tbody>
@@ -110,10 +119,10 @@
 <div class="tab">
 <h2>standard output</h2>
 <span class="code">
-<pre id="root-0-test-stdout-com.payinvariants.ChargesTest">23:49:50.341 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:49:50.403 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
-23:49:50.433 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:49:50.435 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
+<pre id="root-0-test-stdout-com.payinvariants.ChargesTest">00:13:50.114 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:13:50.163 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
+00:13:50.187 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.payinvariants.ChargesTest]: ChargesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:13:50.189 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.ChargesTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -124,48 +133,48 @@
 
  :: Spring Boot ::                (v4.1.1)
 
-2026-09-25T23:49:50.553-04:00  INFO 82466 --- [    Test worker] com.payinvariants.ChargesTest            : Starting ChargesTest using Java 23.0.1 with PID 82466 (started by tabo in /Users/tabo/pay-invariants)
-2026-09-25T23:49:50.554-04:00  INFO 82466 --- [    Test worker] com.payinvariants.ChargesTest            : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2026-09-25T23:49:50.762-04:00  INFO 82466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-25T23:49:50.781-04:00  INFO 82466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
-2026-09-25T23:49:50.923-04:00  INFO 82466 --- [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
-2026-09-25T23:49:50.924-04:00  INFO 82466 --- [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-2026-09-25T23:49:50.931-04:00  INFO 82466 --- [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 2.0.5
-2026-09-25T23:49:51.019-04:00  INFO 82466 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-2026-09-25T23:49:51.189-04:00  INFO 82466 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
-2026-09-25T23:49:51.190-04:00  INFO 82466 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
-2026-09-25T23:49:51.201-04:00  INFO 82466 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+2026-09-26T00:13:50.290-04:00  INFO 85604 --- [    Test worker] com.payinvariants.ChargesTest            : Starting ChargesTest using Java 23.0.1 with PID 85604 (started by tabo in /Users/tabo/pay-invariants)
+2026-09-26T00:13:50.291-04:00  INFO 85604 --- [    Test worker] com.payinvariants.ChargesTest            : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-09-26T00:13:50.514-04:00  INFO 85604 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-26T00:13:50.530-04:00  INFO 85604 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2026-09-26T00:13:50.639-04:00  INFO 85604 --- [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2026-09-26T00:13:50.640-04:00  INFO 85604 --- [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-09-26T00:13:50.646-04:00  INFO 85604 --- [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 2.0.5
+2026-09-26T00:13:50.721-04:00  INFO 85604 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-09-26T00:13:50.862-04:00  INFO 85604 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2026-09-26T00:13:50.863-04:00  INFO 85604 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2026-09-26T00:13:50.871-04:00  INFO 85604 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
   Server Version: 28.3.2
   API Version: 1.51
   Operating System: Docker Desktop
   Total Memory: 7837 MB
   Labels: 
     com.docker.desktop.address=unix:///Users/tabo/Library/Containers/com.docker.docker/Data/docker-cli.sock
-2026-09-25T23:49:51.256-04:00  INFO 82466 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Creating container for image: testcontainers/ryuk:0.14.0
-2026-09-25T23:49:51.439-04:00  INFO 82466 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 is starting: 58b77794474e89c34e6991640e875c7e0981a15372256ed56d254013a00a3f66
-2026-09-25T23:49:51.597-04:00  INFO 82466 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 started in PT0.341503S
-2026-09-25T23:49:51.600-04:00  INFO 82466 --- [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-2026-09-25T23:49:51.600-04:00  INFO 82466 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
-2026-09-25T23:49:51.600-04:00  INFO 82466 --- [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
-2026-09-25T23:49:51.600-04:00  INFO 82466 --- [    Test worker] tc.postgres:latest                       : Creating container for image: postgres:latest
-2026-09-25T23:49:51.633-04:00  INFO 82466 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest is starting: 5dfbdf434e706f826e7b0f4f309282c8ab9d4198aa9dcc5751f52e35e6de9399
-2026-09-25T23:49:52.243-04:00  INFO 82466 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest started in PT0.643022S
-2026-09-25T23:49:52.244-04:00  INFO 82466 --- [    Test worker] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:60748/test?loggerLevel=OFF)
-2026-09-25T23:49:52.424-04:00  INFO 82466 --- [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:60748/test?loggerLevel=OFF (PostgreSQL 18.6)
-2026-09-25T23:49:52.454-04:00  INFO 82466 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;public&quot;.&quot;flyway_schema_history&quot; does not exist yet
-2026-09-25T23:49:52.456-04:00  INFO 82466 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.009s)
-2026-09-25T23:49:52.465-04:00  INFO 82466 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
-2026-09-25T23:49:52.497-04:00  INFO 82466 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2026-09-25T23:49:52.500-04:00  INFO 82466 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;public&quot; to version &quot;1 - charges&quot;
-2026-09-25T23:49:52.509-04:00  INFO 82466 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;public&quot;, now at version v1 (execution time 00:00.004s)
-2026-09-25T23:49:52.546-04:00  INFO 82466 --- [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-09-25T23:49:52.573-04:00  INFO 82466 --- [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
-2026-09-25T23:49:52.721-04:00  INFO 82466 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-25T23:49:52.733-04:00  INFO 82466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-09-25T23:49:52.742-04:00  INFO 82466 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4db10b9f
-2026-09-25T23:49:52.743-04:00  INFO 82466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-09-25T23:49:52.771-04:00  INFO 82466 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:60748/test?loggerLevel=OFF]
+2026-09-26T00:13:50.930-04:00  INFO 85604 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Creating container for image: testcontainers/ryuk:0.14.0
+2026-09-26T00:13:51.139-04:00  INFO 85604 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 is starting: f9c4fe3a34620b582edc4edd05ddc8c0f14919d466723ecc72ab60ce8c1cad80
+2026-09-26T00:13:51.307-04:00  INFO 85604 --- [    Test worker] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 started in PT0.376555S
+2026-09-26T00:13:51.308-04:00  INFO 85604 --- [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-09-26T00:13:51.308-04:00  INFO 85604 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2026-09-26T00:13:51.309-04:00  INFO 85604 --- [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2026-09-26T00:13:51.309-04:00  INFO 85604 --- [    Test worker] tc.postgres:latest                       : Creating container for image: postgres:latest
+2026-09-26T00:13:51.336-04:00  INFO 85604 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest is starting: f7efb567c0d1bf7ceff2f5d2017c6c8920f5ed7a9e1ac5dbd32d57763b5866de
+2026-09-26T00:13:51.946-04:00  INFO 85604 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest started in PT0.636966S
+2026-09-26T00:13:51.946-04:00  INFO 85604 --- [    Test worker] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:61554/test?loggerLevel=OFF)
+2026-09-26T00:13:52.115-04:00  INFO 85604 --- [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:61554/test?loggerLevel=OFF (PostgreSQL 18.6)
+2026-09-26T00:13:52.136-04:00  INFO 85604 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;public&quot;.&quot;flyway_schema_history&quot; does not exist yet
+2026-09-26T00:13:52.137-04:00  INFO 85604 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.006s)
+2026-09-26T00:13:52.145-04:00  INFO 85604 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
+2026-09-26T00:13:52.185-04:00  INFO 85604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2026-09-26T00:13:52.189-04:00  INFO 85604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;public&quot; to version &quot;1 - charges&quot;
+2026-09-26T00:13:52.201-04:00  INFO 85604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;public&quot;, now at version v1 (execution time 00:00.007s)
+2026-09-26T00:13:52.234-04:00  INFO 85604 --- [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-26T00:13:52.256-04:00  INFO 85604 --- [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-26T00:13:52.400-04:00  INFO 85604 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-26T00:13:52.412-04:00  INFO 85604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-26T00:13:52.423-04:00  INFO 85604 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28721794
+2026-09-26T00:13:52.424-04:00  INFO 85604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-26T00:13:52.450-04:00  INFO 85604 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:61554/test?loggerLevel=OFF]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
 	Database version: 18.6
@@ -176,14 +185,14 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-09-25T23:49:53.152-04:00  INFO 82466 --- [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-09-25T23:49:53.173-04:00  INFO 82466 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-25T23:49:53.203-04:00  INFO 82466 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-09-25T23:49:53.304-04:00  WARN 82466 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-09-25T23:49:53.424-04:00  INFO 82466 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-09-25T23:49:53.424-04:00  INFO 82466 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-09-25T23:49:53.425-04:00  INFO 82466 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2026-09-25T23:49:53.441-04:00  INFO 82466 --- [    Test worker] com.payinvariants.ChargesTest            : Started ChargesTest in 2.98 seconds (process running for 3.516)
+2026-09-26T00:13:52.770-04:00  INFO 85604 --- [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-26T00:13:52.799-04:00  INFO 85604 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T00:13:52.826-04:00  INFO 85604 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-26T00:13:52.912-04:00  WARN 85604 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-26T00:13:53.008-04:00  INFO 85604 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-26T00:13:53.008-04:00  INFO 85604 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-26T00:13:53.009-04:00  INFO 85604 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-09-26T00:13:53.018-04:00  INFO 85604 --- [    Test worker] com.payinvariants.ChargesTest            : Started ChargesTest in 2.807 seconds (process running for 3.243)
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-com.payinvariants.ChargesTest">Copy</button>
 </span>
@@ -198,7 +207,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.7.1</a> at Sep 25, 2026, 11:49:54 p.m.</p>
+<a href="https://www.gradle.org">Gradle 9.7.1</a> at Sep 26, 2026, 12:13:53 a.m.</p>
 </div>
 </div>
 </body>

@@ -51,7 +51,7 @@ class ChargesController {
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(row.getResponseBody());
             } else {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Charge not found with key: " + hex);
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Charge not found with key: " + hex);
             }
             
         } else {

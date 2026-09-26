@@ -27,6 +27,7 @@ class ChargesTest {
 
     @Test
     void same_key_same_body_charges_once() throws Exception {
+        
         String jsonBody = "{\"amount\":50}";
 
         MvcResult first = mockMvc.perform(post("/charges")
@@ -49,4 +50,31 @@ class ChargesTest {
         assertThat(second.getResponse().getContentAsString())
             .isEqualTo(first.getResponse().getContentAsString());
     }
+
+    @Test
+    void same_key_different_body_charges_once() throws Exception {
+
+        String jsonBody = "{\"amount\":50}";
+
+        MvcResult first = mockMvc.perform(post("/charges")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("Idempotency-Key", "def")
+        .content(jsonBody))
+        .andExpect(jsonPath("$.amount").value(50))
+        .andReturn();
+
+        Long currCount = chargesRepository.count();
+
+        String jsonBody2 = "{\"amount\":75}";
+
+        MvcResult second = mockMvc.perform(post("/charges")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("Idempotency-Key", "def")
+        .content(jsonBody2))
+        .andReturn();
+
+        assertThat(second.getResponse().getStatus()).isEqualTo(409);
+        assertThat(chargesRepository.count()).isEqualTo(currCount);
+    }
 }
+
