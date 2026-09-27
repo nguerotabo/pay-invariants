@@ -34,6 +34,7 @@ class ChargesController {
     @PostMapping("/charges")
     public ResponseEntity<String> postCharges (
         @RequestHeader("Idempotency-Key") String key,
+        @RequestHeader(value = "Crash-After-Save", required = false) String crashAfterSave,
         @RequestBody String body)throws Exception {
             
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -75,6 +76,11 @@ class ChargesController {
             idem.setHttpStatus(200);
             idem.setResponseBody(json);
             idempotencyKeyRepository.save(idem);
+
+            // Specifically for the crash-after-save test
+            if ("true".equals(crashAfterSave)) {
+                throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "crash after save");
+            }
 
             // Return the body
             return ResponseEntity.ok()

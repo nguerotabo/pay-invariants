@@ -76,5 +76,33 @@ class ChargesTest {
         assertThat(second.getResponse().getStatus()).isEqualTo(409);
         assertThat(chargesRepository.count()).isEqualTo(currCount);
     }
+
+    @Test
+    void crash_state() throws Exception {
+
+        String jsonBody = "{\"amount\":50}";
+        Long currCount = chargesRepository.count();
+
+        MvcResult first = mockMvc.perform(post("/charges")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("Crash-After-Save", "true")
+        .header("Idempotency-Key", "ghi")
+        .content(jsonBody))
+        .andReturn();
+
+        assertThat(chargesRepository.count()).isEqualTo(currCount + 1);
+
+        MvcResult second = mockMvc.perform(post("/charges")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("Idempotency-Key", "ghi")
+        .content(jsonBody))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.amount").value(50))
+        .andReturn();
+
+        assertThat(first.getResponse().getStatus()).isEqualTo(500);
+        assertThat(second.getResponse().getStatus()).isEqualTo(200);
+        assertThat(chargesRepository.count()).isEqualTo(currCount + 1);
+    }
 }
 
