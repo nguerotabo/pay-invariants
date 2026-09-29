@@ -40,11 +40,11 @@ public class ProcessorEvent {
         return last_four;
     }
 
-    public void setMessageID(Long message_id){
+    public void setMessageID(String message_id){
         this.message_id = message_id;
     }
 
-    public void setCardToken(Long card_token){
+    public void setCardToken(String card_token){
         this.card_token = card_token;
     }
 
