@@ -13,7 +13,7 @@ public class ProcessorEvent {
     @Column(name = "card_token", nullable = false)
         private String card_token;
 
-    @Column(name = "last_four", nullable = false)
+    @Column(name = "last_four", nullable = false, length = 4)
         private String last_four;
 
     // Constructors

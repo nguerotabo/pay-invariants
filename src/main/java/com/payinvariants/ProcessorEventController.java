@@ -50,13 +50,13 @@ class ProcessorEventController {
         }
 
         String[] timePart = parts[0].split("=", 2);
-        String[] stampPart = parts[1].split("=", 2);
-        
-        String v1 = stampPart[1];
+        String[] stampPart = parts[1].split("=", 2);      
 
         if (timePart.length != 2 || stampPart.length != 2 || !timePart[0].equals("t") || !stampPart[0].equals("v1")){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Signature is not correct: " + signature);
         }
+
+         String v1 = stampPart[1];
 
         try {
             timestamp = Long.parseLong(timePart[1]);
