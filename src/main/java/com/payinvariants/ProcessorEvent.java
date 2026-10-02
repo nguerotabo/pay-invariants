@@ -11,7 +11,7 @@ public class ProcessorEvent {
         private String message_id;
 
     @Column(name = "card_token", nullable = false)
-        private String card_token;
+        private String cardToken;
 
     @Column(name = "last_four", nullable = false, length = 4)
         private String last_four;
@@ -20,9 +20,9 @@ public class ProcessorEvent {
 
     public ProcessorEvent(){};
 
-    public ProcessorEvent(String message_id, String card_token, String last_four){
+    public ProcessorEvent(String message_id, String cardToken, String last_four){
         this.message_id = message_id;
-        this.card_token = card_token;
+        this.cardToken = cardToken;
         this.last_four = last_four;
     }
 
@@ -33,7 +33,7 @@ public class ProcessorEvent {
     }
 
     public String getCardToken(){
-        return card_token;
+        return cardToken;
     }
 
     public String getLastFour(){
@@ -44,8 +44,8 @@ public class ProcessorEvent {
         this.message_id = message_id;
     }
 
-    public void setCardToken(String card_token){
-        this.card_token = card_token;
+    public void setCardToken(String cardToken){
+        this.cardToken = cardToken;
     }
 
     public void setLastFour(String last_four){

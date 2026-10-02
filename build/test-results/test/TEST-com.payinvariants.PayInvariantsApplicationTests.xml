@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.payinvariants.PayInvariantsApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-02T03:29:56.369Z" hostname="Ngueros-MacBook-Air.local" time="0.814">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.payinvariants.PayInvariantsApplicationTests" time="0.001"/>
+  <system-out><![CDATA[2026-10-01T23:29:56.370-04:00  INFO 18831 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.payinvariants.PayInvariantsApplicationTests]: PayInvariantsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T23:29:56.371-04:00  INFO 18831 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.PayInvariantsApplicationTests
+2026-10-01T23:29:56.372-04:00  INFO 18831 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.payinvariants.PayInvariantsApplicationTests]: PayInvariantsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T23:29:56.372-04:00  INFO 18831 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.payinvariants.PayInvariantsApplication for test class com.payinvariants.PayInvariantsApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-01T23:29:56.380-04:00  INFO 18831 --- [    Test worker] c.p.PayInvariantsApplicationTests        : Starting PayInvariantsApplicationTests using Java 23.0.1 with PID 18831 (started by tabo in /Users/tabo/pay-invariants)
+2026-10-01T23:29:56.381-04:00  INFO 18831 --- [    Test worker] c.p.PayInvariantsApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2026-10-01T23:29:56.413-04:00  INFO 18831 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01T23:29:56.415-04:00  INFO 18831 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 3 JPA repository interfaces.
+2026-10-01T23:29:56.430-04:00  INFO 18831 --- [    Test worker] tc.postgres:latest                       : Creating container for image: postgres:latest
+2026-10-01T23:29:56.479-04:00  INFO 18831 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest is starting: 539e5a9e4b478d5d1b52a1ebbbb7eb5912a9de76c6c9d82bac03642fdb4533f0
+2026-10-01T23:29:57.044-04:00  INFO 18831 --- [    Test worker] tc.postgres:latest                       : Container postgres:latest started in PT0.61334S
+2026-10-01T23:29:57.044-04:00  INFO 18831 --- [    Test worker] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:63820/test?loggerLevel=OFF)
+2026-10-01T23:29:57.085-04:00  INFO 18831 --- [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63820/test?loggerLevel=OFF (PostgreSQL 18.6)
+2026-10-01T23:29:57.090-04:00  INFO 18831 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-01T23:29:57.091-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.001s)
+2026-10-01T23:29:57.094-04:00  INFO 18831 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-01T23:29:57.102-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-01T23:29:57.103-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - charges"
+2026-10-01T23:29:57.108-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - processor webhooks"
+2026-10-01T23:29:57.112-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - charge card token"
+2026-10-01T23:29:57.115-04:00  INFO 18831 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.003s)
+2026-10-01T23:29:57.119-04:00  INFO 18831 --- [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-01T23:29:57.125-04:00  INFO 18831 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01T23:29:57.125-04:00  INFO 18831 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-01T23:29:57.129-04:00  INFO 18831 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6845895c
+2026-10-01T23:29:57.129-04:00  INFO 18831 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-01T23:29:57.131-04:00  INFO 18831 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63820/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.6
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-01T23:29:57.143-04:00  INFO 18831 --- [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01T23:29:57.147-04:00  INFO 18831 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01T23:29:57.166-04:00  WARN 18831 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01T23:29:57.182-04:00  INFO 18831 --- [    Test worker] c.p.PayInvariantsApplicationTests        : Started PayInvariantsApplicationTests in 0.808 seconds (process running for 4.546)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

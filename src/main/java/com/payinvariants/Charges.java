@@ -15,13 +15,16 @@ public class Charges {
     @Column(name = "amount", nullable = false)
     private int amount; 
 
+    @Column(name = "card_token", nullable = false)
+    private String cardToken;
+
     // Constructors
 
     public Charges(){}
 
     public Charges(UUID id, int amount){
         this.id = id;
-        this.amount = amount; 
+        this.amount = amount;
     }
 
     // Getters & Setters
@@ -34,6 +37,10 @@ public class Charges {
         return amount;
     }
 
+    public String getCardToken(){
+        return cardToken;
+    }
+
     public void setId(UUID id){
         this.id = id;
     }
@@ -42,5 +49,8 @@ public class Charges {
         this.amount = amount;
     }
 
+    public void setCardToken(String cardToken){
+        this.cardToken = cardToken;
+    }
 }
 

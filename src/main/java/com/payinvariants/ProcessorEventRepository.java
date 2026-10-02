@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProcessorEventRepository extends JpaRepository<ProcessorEvent, String>{}
+public interface ProcessorEventRepository extends JpaRepository<ProcessorEvent, String>{
+    List<ProcessorEvent> findByCardToken(String cardToken);
+}

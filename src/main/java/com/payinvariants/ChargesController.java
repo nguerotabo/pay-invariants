@@ -20,13 +20,16 @@ import tools.jackson.databind.ObjectMapper;
 class ChargesController {
 
     private final IdempotencyKeyRepository idempotencyKeyRepository;
+    private final ProcessorEventRepository processorEventRepository;
     private final ChargesRepository chargesRepository;
     private final ObjectMapper objectMapper;
 
-    ChargesController(IdempotencyKeyRepository idempotencyKeyRepository,
+    ChargesController(IdempotencyKeyRepository idempotencyKeyRepository, 
+                  ProcessorEventRepository processorEventRepository,
                   ChargesRepository chargesRepository,
                   ObjectMapper objectMapper) {
         this.idempotencyKeyRepository = idempotencyKeyRepository;
+        this.processorEventRepository = processorEventRepository;
         this.chargesRepository = chargesRepository;
         this.objectMapper = objectMapper;
     }
@@ -42,11 +45,11 @@ class ChargesController {
         String hex = HexFormat.of().formatHex(hash);
             
         // Check whether the hex already exists in our idempotencyKeyRepository
-        var found = idempotencyKeyRepository.findById(key);
+        var foundIdemId = idempotencyKeyRepository.findById(key);
 
         // If it exists, check if it matches the hex -> if it does, return the status, JSON, body
-        if(found.isPresent()){
-            IdempotencyKey row = found.get();
+        if(foundIdemId.isPresent()){
+            IdempotencyKey row = foundIdemId.get();
             if (row.getBodyHash().equals(hex)){
                 return ResponseEntity.status(row.getHttpStatus())
                     .contentType(MediaType.APPLICATION_JSON)
@@ -60,14 +63,27 @@ class ChargesController {
             // Add the new key to the idempotencyKey repo and add the new amount to the charges repo.
             JsonNode tree = objectMapper.readTree(body);
             int amount = tree.get("amount").asInt();
+            String card_token = tree.get("card_token").asString();
 
             Charges charges = new Charges();
             charges.setAmount(amount);
+            
+
+            // Check if the card_token exists in our processorEventRepository;
+            var foundCardToken = processorEventRepository.findByCardToken(card_token);
+
+            if(foundCardToken.isEmpty()){
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Card_token was not found: " + foundCardToken);
+            } else {
+                charges.setCardToken(card_token);
+            }
+
             Charges saved = chargesRepository.save(charges);
 
             String json = objectMapper.writeValueAsString(java.util.Map.of(
                 "id", saved.getId(),
-                "amount", saved.getAmount()
+                "amount", saved.getAmount(),
+                "card_token", saved.getCardToken()
             ));
 
             IdempotencyKey idem = new IdempotencyKey();

@@ -1,0 +1,2 @@
+ALTER TABLE charges
+    ADD COLUMN card_token VARCHAR(255) NOT NULL;

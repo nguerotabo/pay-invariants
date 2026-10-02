@@ -1,4 +1,6 @@
 package com.payinvariants;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,6 +11,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.UUID;
 
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -25,10 +29,22 @@ class ChargesTest {
     @Autowired
     ChargesRepository chargesRepository;
 
+    @Autowired 
+    ProcessorEventRepository processorEventRepository;
+
+    @BeforeEach
+    void saveCard() {
+        ProcessorEvent event = new ProcessorEvent();
+        event.setMessageID(UUID.randomUUID().toString());
+        event.setCardToken("tok_abc");
+        event.setLastFour("4242");
+        processorEventRepository.save(event);
+    }
+
     @Test
     void same_key_same_body_charges_once() throws Exception {
         
-        String jsonBody = "{\"amount\":50}";
+        String jsonBody = "{\"amount\":50,\"card_token\":\"tok_abc\"}";
 
         MvcResult first = mockMvc.perform(post("/charges")
         .contentType(MediaType.APPLICATION_JSON)
@@ -54,7 +70,7 @@ class ChargesTest {
     @Test
     void same_key_different_body_charges_once() throws Exception {
 
-        String jsonBody = "{\"amount\":50}";
+        String jsonBody = "{\"amount\":50,\"card_token\":\"tok_abc\"}";
 
         MvcResult first = mockMvc.perform(post("/charges")
         .contentType(MediaType.APPLICATION_JSON)
@@ -65,7 +81,7 @@ class ChargesTest {
 
         Long currCount = chargesRepository.count();
 
-        String jsonBody2 = "{\"amount\":75}";
+        String jsonBody2 = "{\"amount\":75,\"card_token\":\"tok_abc\"}";
 
         MvcResult second = mockMvc.perform(post("/charges")
         .contentType(MediaType.APPLICATION_JSON)
@@ -80,7 +96,7 @@ class ChargesTest {
     @Test
     void crash_state() throws Exception {
 
-        String jsonBody = "{\"amount\":50}";
+        String jsonBody = "{\"amount\":50,\"card_token\":\"tok_abc\"}";
         Long currCount = chargesRepository.count();
 
         MvcResult first = mockMvc.perform(post("/charges")
@@ -103,6 +119,22 @@ class ChargesTest {
         assertThat(first.getResponse().getStatus()).isEqualTo(500);
         assertThat(second.getResponse().getStatus()).isEqualTo(200);
         assertThat(chargesRepository.count()).isEqualTo(currCount + 1);
+    }
+
+    @Test
+    void unknown_token_writes_no_charge() throws Exception {
+
+        String jsonBody = "{\"amount\":50,\"card_token\":\"tok_missing\"}";
+
+        Long currCount = chargesRepository.count();
+
+        mockMvc.perform(post("/charges")
+            .contentType(MediaType.APPLICATION_JSON)
+            .header("Idempotency-Key", "jkl")
+            .content(jsonBody))
+            .andExpect(status().isBadRequest());
+
+        assertThat(chargesRepository.count()).isEqualTo(currCount);
     }
 }
 
