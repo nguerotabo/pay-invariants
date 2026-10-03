@@ -16,3 +16,14 @@ A payment company sends `POST /webhooks/processor` with a card token, the last f
 4. The customer requests a charge and sends the idempotency key with that request.
 5. A new key is checked against the saved tokens. A missing token is rejected and no charge is written.
 6. A known token is charged once. The key and the response are saved, so a repeat returns that response.
+
+## Request path
+
+```mermaid
+flowchart LR
+  processor["Payment company"] -->|"POST /webhooks/processor + Processor-Signature"| check["Check the stamp"]
+  check --> save["Save card_token and last four"]
+  client["Customer"] -->|"POST /charges + card_token + Idempotency-Key"| lookup["Look up the token"]
+  save --> lookup
+  lookup --> charge["Write one charge"]
+  charge --> again["Same key again returns that charge"]
